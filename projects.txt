@@ -1,0 +1,183 @@
+**Project-1 SpaceData Launch System**
+https://github.com/nr1306/SpaceDataLaunchSystem
+
+Description: The SpaceData Launch System is a full-stack web application that delivers real-time space mission and planetary data by integrating the SpaceX API with GraphQL. Built with React for the frontend and Node.js for the backend, the platform features a responsive, interactive interface that allows users to explore live mission updates, launch details, and planetary information. I implemented reusable React components, efficient state management, and asynchronous data fetching to ensure smooth performance and a seamless user experience, while leveraging modern JavaScript (ES6+) best practices for clean, maintainable code.
+
+Resume Points: 
+
+- Delivered real-time space mission data access by building a full-stack web app with Node.js, React, and GraphQL, integrating with the SpaceX API for live mission updates and planetary insights.
+- Improved system responsiveness by 35\\% through asynchronous data fetching and state management, ensuring seamless interaction across dynamic datasets.
+- Enhanced user engagement by implementing reusable React components and a responsive UI, providing an intuitive, scalable platform for exploring space missions.
+- Maintained code quality and scalability by applying modern ES6+ practices and modular architecture, ensuring long-term maintainability for distributed data services.
+
+**Project-2 MCP-based MongoDB Chatbot**
+
+https://github.com/nr1306/MCP-Based_MongoDB_Chatbot
+
+Description: Developed an **MCP-based MongoDB chatbot** enabling AI-driven database operations through natural language, by integrating MongoDB with the **Model Context Protocol (MCP)** to allow intelligent agents to perform CRUD operations via contextual task execution. Built a **terminal-based chatbot interface** powered by **Google’s Gemini API**, enabling real-time, conversational data retrieval and manipulation, streamlining user interaction with MongoDB and reducing the need for manual query writing.
+
+Resume Points: 
+
+- Enabled AI-driven database operations via natural language by integrating MongoDB with the Model Context Protocol (MCP), allowing intelligent agents to perform CRUD actions through contextual task execution.
+- Streamlined user interaction with MongoDB by building a terminal-based chatbot interface using Google’s Gemini API, supporting real-time, conversational data retrieval and manipulation.
+
+**Project-3 PDF Question Answering System using LLM**
+
+https://colab.research.google.com/drive/1w6yjhLL-wFDydBkzdgxcrHksWOaHfoxt?usp=sharing
+
+Description: Built a **PDF Question Answering System** that enhanced document comprehension and retrieval accuracy by integrating **Apache Cassandra** and **DataStax Astra DB** as vector databases for efficient semantic search. Designed a **Streamlit-based interactive interface** enabling users to upload PDFs and receive real-time, context-aware answers. Leveraged **LangChain**, **Python**, and **OpenAI GPT-3.5** to process documents, extract relevant context, and generate high-accuracy natural language responses, delivering a seamless and intelligent document interaction experience.
+
+Resume Points: 
+
+- Improved document comprehension and retrieval accuracy by developing a PDF-based QA system integrated with Apache Cassandra and DataStax Astra DB as vector databases for efficient semantic search.
+- Enabled real-time interactive querying by building a user-friendly interface using Streamlit, allowing users to upload PDFs and receive answers dynamically.
+- Leveraged cutting-edge LLM integration by combining LangChain, Python, and OpenAI GPT-3.5 to process documents, extract context, and generate high-accuracy responses to natural language queries.
+
+**Project -4 AWS-Event-Driven-Compliance-Automation**
+
+https://github.com/nr1306/AWS-Event-Driven-Compliance-Automation
+
+Description: Developed an automated policy enforcement system across AWS services by building event-driven Lambda functions triggered via EventBridge, reducing manual compliance checks by 70% and ensuring consistent governance over EBS, EC2, and S3 resources. Utilized Python and boto3 within IAM-secured Lambda functions to automatically convert EBS volumes, audit S3 buckets, and validate EC2 instance types against organizational standards. Replaced manual monitoring with a scalable automation framework, cutting cloud operations overhead by 60% through least-privilege IAM roles, centralized CloudWatch logging, and robust event-driven workflows.
+
+One project I’m especially proud of is the **AWS Cloud Compliance Automation Platform** 
+Resume(n).
+
+The core problem I wanted to solve was simple but painful: teams were manually checking whether AWS resources were configured correctly. That process was slow, error-prone, and easy to forget under pressure. I built a system that continuously evaluated the state of AWS resources in real time and automatically corrected non-compliant configurations.
+
+I designed serverless detection and remediation workflows using AWS CDK, Lambda, and EventBridge. The platform monitored EC2, S3, and other resources, enforced IAM guardrails, and triggered automated fixes whenever configurations drifted from defined policies. This reduced configuration drift by 40% and cut manual review effort by 70%.
+
+What I’m most proud of isn’t just the metrics — it’s that I owned the project end to end. I defined the architecture, implemented the automation logic, handled deployment, and ensured it was reliable. It forced me to think about scalability, security, and failure handling, not just “does the code run.” It also changed how I think about systems: good engineering removes repetitive human work and replaces it with reliable, observable automation.
+
+Resume Points:
+
+- Automated policy enforcement across AWS services by developing Lambda functions triggered via EventBridge, reducing manual compliance checks by 70% and ensuring consistent governance over EBS, EC2, and S3.
+- Optimized cloud resource governance by using Python and boto3 within IAM-secured Lambda functions to auto-convert EBS volumes, audit S3 buckets, and validate EC2 instance types based on organizational standards.
+- Reduced cloud operations overhead by 60% by replacing manual monitoring with scalable, event-driven automation, secured through least-privilege IAM roles and integrated with centralized CloudWatch logging.
+
+**Project-5 Automated DynamoDB Data Visualization Using AWS Services**
+
+Description: Developed a solution to enable **SQL querying on NoSQL data** by connecting **Amazon DynamoDB** to **Athena** via an **AWS Lambda data connector** and configuring **AWS Glue crawlers** for seamless access to structured metadata. Achieved **real-time dashboard visualization** by integrating Athena with **Amazon QuickSight**, implementing **IAM role policies** to securely enable Lambda execution and manage controlled access to **S3 spill buckets** for efficient handling of large queries.
+
+Resume Points:
+
+- Enabled SQL querying on NoSQL data by connecting DynamoDB to Athena through an AWS Lambda data connector and configuring AWS Glue crawlers, allowing seamless access and query execution over structured metadata.
+- Achieved real-time dashboard visualization by integrating Athena with Amazon QuickSight, using IAM role policies to securely enable Lambda execution and grant controlled access to S3 spill buckets for large query handling.
+
+**Project -6 Prepwise**
+
+http://github.com/adrianhajdin/ai_mock_interviews
+
+Description: Built **PrepWise**, a **real-time AI mock interview platform** using **Next.js** and **Vapi AI**, designed to help users master job interviews through interactive voice-driven sessions. The project features secure **Firebase authentication**, a sleek, responsive UI built with **Tailwind CSS** and **shadcn/ui**, and powerful AI-generated conversational flows powered by **Google Gemini**. Candidates can create mock interviews, interact with AI-powered voice agents, receive instant feedback and transcripts, and manage their practice sessions via a user-friendly dashboard—delivering a polished, full-stack solution for realistic interview preparation
+
+**Project -7 Gradient Boosting model**
+
+https://github.com/nr1306/ML_Project2
+Description: Developed a **Gradient Boosting Tree (GBT) model** from scratch with a familiar `fit`–`predict` interface following Sections 10.9–10.10 of *Elements of Statistical Learning (2nd Edition)*. The model supports regression using various loss functions—squared error, absolute error, and Huber loss—with tunable hyperparameters including `n_estimators`, `learning_rate`, `max_depth`, and `loss`. Using the California Housing dataset, the team validated performance via Mean Squared Error (MSE) and analyzed feature importance for interpretability. The project, carried out collaboratively by “Tree Titans” (Nesh and Nikhil), highlights both core development of the algorithm and enhancements like hyperparameter tuning and visualization.
+
+Resume Points:
+
+Project -8 
+
+https://github.com/nr1306/Project1_ML
+
+Description: Developed a **Linear Regression with ElasticNet regularization** model—a blend of L1 (Lasso) and L2 (Ridge) techniques—to enable more robust, interpretable regression on datasets with multicollinearity or the need for feature selection. The project includes synthetic data generation, a clean `fit`–`predict` interface, and configuration via key hyperparameters like `alpha` (regularization strength) and `l1_ratio` (mixing ratio). It’s well-suited for regression tasks where both prediction accuracy and model sparsity are important.
+
+Resume Points:
+
+**Project -9 Home Automation Dashboard**
+
+https://github.com/20IT121/Homemade_Automation-Dashboard
+
+Description: Delivered a **production-ready IoT-based home automation system** with end-to-end integration of **ESP32 microcontrollers** and **DS18B20 sensors** into a responsive **Qt Quick dashboard**, built using **QML** for the frontend and **C++** for backend logic. Implemented **MQTT protocol** and integrated with **AWS IoT Core** to enable secure, real-time device communication, cloud-based registration, and message brokering for over 10 IoT devices. Designed reusable QML components and optimized performance in **Qt Creator** to enhance modularity, responsiveness, and user experience across platforms. Improved reliability and cross-device compatibility through Agile collaboration, code reviews, and rigorous unit, system, and regression testing.
+
+**Research-work-1**
+
+**Deep Learning for Breast Cancer Classification: A Comparative Study of Pretrained CNN ModelsDeep Learning for Breast Cancer Classification: A Comparative Study of Pretrained CNN Models**
+
+Springer · Apr 15, 2025Springer · Apr 15, 2025
+
+- [**Show publication**](https://link.springer.com/chapter/10.1007/978-981-97-8526-1_39)
+- 📌 OVERVIEWConducted a comparative study on multiple pre-trained CNN architectures using transfer learning to detect and classify breast cancer from microscopic biopsy images. Focused on evaluating model performance across various optimizers and metrics
+- .🧠 KEY OBJECTIVESImprove early breast cancer detection using deep learning models.Compare multiple transfer learning models to identify the most accurate one.Evaluate model performance using standard classification metrics.
+- 🖼️ DATASETSourced from Kaggle – Breast Cancer Image DatasetTotal samples: 2,292 imagesBinary classification: Benign vs. MalignantImages preprocessed and stored as NumPy arrays
+- 🛠️ MODELS EVALUATEDVGG16ResNet50XceptionInceptionV3DenseNet121DenseNet169⚙️ HYPERPARAMETERS & SETUPOptimizers: Adam, RMSprop, SGDLoss Function: Categorical Cross-EntropyEvaluation Metrics: Accuracy, F1-Score, RecallEpochs: 10 for all modelsMetrics computed for each optimizer-model combination
+- 📊 RESULTS🥇 Xception + SGD: Achieved highest accuracy (99.99%)🥈 ResNet50 + Adam: Performed consistently well across all metrics (Accuracy: 99.8%)Xception showed excellent F1-Score and Recall under SGD and RMSpropPerformance rankings varied slightly by optimizer, with ResNet50 and Xception consistently leading
+- 📌 PARAMETER & PERFORMANCE COMPARISONTrainable Parameters ranged from ~130K (VGG16) to ~22M (Xception)Inference Times: 5s to 34s, with Xception being the most compute-intensive
+- 📈 CONCLUSIONTransfer learning with pre-trained CNNs significantly enhances classification accuracy.Xception and ResNet50 stand out as top performers in breast cancer classification.These models can be instrumental in developing accurate and scalable medical imaging solutions.
+- 💻 TECH STACK & TOOLSPython · TensorFlow/Keras · NumPy · Kaggle · Transfer Learning · CNN · Medical Imaging
+
+**Research-work-2**
+
+**Comparing Effectiveness of Statistical Versus Deep Learning for Time Series ForecastingComparing Effectiveness of Statistical Versus Deep Learning for Time Series Forecasting**
+
+Springer · Jun 2, 2024Springer · Jun 2, 2024
+
+- [**Show publication**](https://link.springer.com/chapter/10.1007/978-981-97-1313-4_22)
+- 📌 OVERVIEWInvestigated and compared the performance of traditional statistical models and deep learning methods on real-world time series datasets. The goal was to determine which models yield better accuracy and computational efficiency.
+- 🧠 KEY MODELS USED Statistical Models: ARIMA, ProphetDeep Learning Models: RNN, GRU, LSTM, DeepAREnhanced Models: Bi-LSTM, Bi-GRU
+- 📊 DATASETS Jena Climate Dataset – hourly environmental data (70,080 entries)Appliances Energy Prediction Dataset – hourly energy consumption data (19,735 entries)
+- 📈 EVALUATION METRICS Mean Squared Error (MSE)Mean Absolute Error (MAE)
+- ✅ RESULTS DeepAR and Bi-LSTM outperformed all other models in terms of prediction accuracy.Deep learning models effectively captured non-linear and long-term dependencies in data.Statistical models performed adequately only on smaller or simpler datasets.
+- 🛠️ TECH STACK & TOOLSPython · TensorFlow · Prophet · ARIMA · Pandas · Matplotlib
+
+## FitPulse – Microservices Fitness Tracking Platform
+
+- Architected a full-stack microservices-based fitness application using Java Spring Boot, implementing RESTful services, service-to-service communication, and layered architecture for scalable user, workout, and tracking modules.
+- Designed and integrated secure backend APIs with database persistence using Spring Data JPA and relational schemas, enabling structured user management, authentication flows, and real-time fitness data tracking.
+- Containerized services with **Docker**, automated Maven builds, and implemented unit/integration tests.
+
+**LEADERSHIP EXPERIENCE**
+
+**Team Lead Volunteer, RTC Conference | Illinois Institute of Technology, Chicago, IL**
+
+- Leda team of student volunteers to coordinate sessions, ensuring smooth execution for 100+ conference
+- Actedas primary liaison between faculty organizers, guest speakers, and volunteers, resolving on-site issues
+- Fostered collaboration by delegating responsibilities, keeping team members aligned with event timelines and priorities.
+
+**Real Estate Lease & Occupancy Analytics Pipeline**
+
+- Built a batch data pipeline using **PySpark** to ingest raw CSV/JSON lease and occupancy data, apply cleansing/deduplication, and write optimized **Parquet** outputs for analytics.
+- Designed **SQL** models for KPI reporting (occupancy, renewal rate, delinquency risk) and implemented data quality checks.
+- Automated repeatable runs with parameterized jobs and documented the pipeline (data dictionary + runbook), enabling reproducible datasets for downstream dashboards and ad-hoc analysis.
+
+VentureScope
+
+https://github.com/nr1306/VentureScope
+
+Description (production grade points):
+
+- Architected a multi-agent orchestration platform on FastAPI + Celery + Redis + pgvector, fanning out four async specialist agents (market, financial, competitor, risk) in parallel and synthesizing results via GPT-4o-mini into structured investment reports with <2-minute end-to-end latency.
+- Solved Celery/asyncio event-loop isolation by enforcing per-invocation AsyncOpenAI clients and SQLAlchemy NullPool — eliminating connection-pool thrashing and Future attached to a different loop failures under concurrent worker load; parallel execution is 3–4× faster than sequential.
+- Built a production eval harness with 4 deterministic quality metrics and an LLM-as-judge rubric against a 50-company golden dataset; achieved 100% competitor recall and enforced citation grounding at the output guardrail layer to prevent hallucinated evidence.
+
+Resume Points:
+
+- Built a full-stack AI due diligence platform that generates structured investment reports across market, financial, competitor, and risk analysis domains.
+- Reduced report generation time to under 2 minutes by parallelizing 4 agents with FastAPI, Celery, Redis, and Postgres; sequential execution would take 3–4× longer.
+- Built a quality layer with citation enforcement, 4 deterministic eval metrics, and an LLM-as-judge rubric, achieving 100% competitor recall on a 50-company golden dataset.
+
+Ticker
+
+https://github.com/nr1306/Ticker
+
+Description: Built an ambient Electron desktop widget delivering live stock prices for 2 windows (portfolio + watchlist) without interrupting workflow — implemented a background IPC polling pipeline (yahoo-finance2, 60s interval) with a frameless, always-on-top overlay that dims to 40% opacity at idle and surfaces on hover. Reduced research time for stock decisions by engineering an AI recommendation engine (GPT-4o) that synthesizes live market data and portfolio holdings into actionable insights — backed by a SQLite caching layer to avoid redundant API calls and persist recommendations across sessions. Eliminated blind spots in volatile markets by building a smart alert system with floor/ceiling/percent triggers, native system notifications, and a NewsAPI + GPT-4o-mini news pulse with AI-generated summaries — wired through a typed IPC layer with persistent alert history and live unread badge tracking.
+
+Resume points
+
+Built an ambient Electron desktop widget for live stock tracking across portfolio and watchlist views without interrupting workflow, using a background IPC polling pipeline and a frameless, always-on-top overlay that dims at idle and surfaces on hover.
+
+Reduced research time for stock decisions by engineering an AI recommendation engine using GPT-4o that synthesized live market data and portfolio holdings into actionable insights, backed by a SQLite caching layer to avoid redundant API calls and persist recommendations across sessions.
+
+Eliminated blind spots in volatile markets by building a smart alert system with price triggers, native desktop notifications, and an AI-powered news pulse, using NewsAPI + GPT-4o-mini to summarize relevant updates and a typed IPC layer to persist alert history and unread badge state.
+
+ARIA
+
+https://github.com/nr1306/Aria
+
+Resume Points
+
+Built an AI-powered pre-visit briefing system for 1,800-patient hypertension panels, generating risk-stratified summaries before appointments to reduce manual chart review for general practitioners.
+
+Designed a three-layer clinical prioritization pipeline using rules-based checks, risk scoring, and LLM-generated summaries, with deterministic safety gates controlling when model output could be surfaced.
+
+Implemented FHIR R4 ingestion, LLM guardrails, and full audit logging so ARIA remained clinician decision support rather than autonomous diagnosis or treatment recommendation.

@@ -1,26 +1,238 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Class-based dark mode — required for next-themes */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Colors ─────────────────────────────────────── */
+  --color-primary:                    #0040e0;
+  --color-primary-container:          #2e5bff;
+  --color-on-primary:                 #ffffff;
+  --color-on-primary-container:       #efefff;
+  --color-primary-fixed:              #dde1ff;
+  --color-primary-fixed-dim:          #b8c3ff;
+  --color-on-primary-fixed:           #001356;
+  --color-on-primary-fixed-variant:   #0035be;
+  --color-inverse-primary:            #b8c3ff;
+  --color-surface-tint:               #124af0;
+
+  --color-secondary:                  #a23f00;
+  --color-secondary-container:        #fc7127;
+  --color-on-secondary:               #ffffff;
+  --color-on-secondary-container:     #5c2000;
+  --color-secondary-fixed:            #ffdbcd;
+  --color-secondary-fixed-dim:        #ffb595;
+  --color-on-secondary-fixed:         #351000;
+  --color-on-secondary-fixed-variant: #7c2e00;
+
+  --color-tertiary:                   #993100;
+  --color-tertiary-container:         #c24100;
+  --color-on-tertiary:                #ffffff;
+  --color-on-tertiary-container:      #ffece6;
+  --color-tertiary-fixed:             #ffdbcf;
+  --color-tertiary-fixed-dim:         #ffb59b;
+  --color-on-tertiary-fixed:          #380d00;
+  --color-on-tertiary-fixed-variant:  #812800;
+
+  --color-surface:                    #f7f9fb;
+  --color-surface-dim:                #d8dadc;
+  --color-surface-bright:             #f7f9fb;
+  --color-surface-container-lowest:   #ffffff;
+  --color-surface-container-low:      #f2f4f6;
+  --color-surface-container:          #eceef0;
+  --color-surface-container-high:     #e6e8ea;
+  --color-surface-container-highest:  #e0e3e5;
+  --color-surface-variant:            #e0e3e5;
+  --color-on-surface:                 #191c1e;
+  --color-on-surface-variant:         #434656;
+  --color-inverse-surface:            #2d3133;
+  --color-inverse-on-surface:         #eff1f3;
+
+  --color-outline:                    #747688;
+  --color-outline-variant:            #c4c5d9;
+
+  --color-background:                 #f7f9fb;
+  --color-on-background:              #191c1e;
+
+  --color-error:                      #ba1a1a;
+  --color-on-error:                   #ffffff;
+  --color-error-container:            #ffdad6;
+  --color-on-error-container:         #93000a;
+
+  /* ── Typography ──────────────────────────────────── */
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', sans-serif;
+
+  /* ── Border Radius ───────────────────────────────── */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-2xl:  2rem;
+  --radius-full: 9999px;
+
+  /* ── Spacing ──────────────────────────────────────── */
+  --spacing-gutter:          1.5rem;
+  --spacing-margin-desktop:  3.75rem;
+  --spacing-section-gap:     7.5rem;
+  --spacing-stack-sm:        0.5rem;
+  --spacing-stack-md:        1rem;
+  --spacing-stack-lg:        2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Glass CSS variables (switch with dark mode) ──────── */
+:root {
+  --glass-bg:            rgba(255, 255, 255, 0.65);
+  --glass-strong-bg:     rgba(255, 255, 255, 0.80);
+  --glass-card-bg:       rgba(255, 255, 255, 0.65);
+  --glass-border:        rgba(255, 255, 255, 0.40);
+  --glass-strong-border: rgba(255, 255, 255, 0.50);
+  --glass-card-shadow:   rgba(0, 0, 0, 0.06);
+  --dot-color:           rgba(184, 195, 255, 1);
+  --vignette-color:      rgba(247, 249, 251, 0.65);
+}
+
+.dark {
+  --glass-bg:            rgba(14, 25, 44, 0.70);
+  --glass-strong-bg:     rgba(10, 18, 34, 0.90);
+  --glass-card-bg:       rgba(16, 26, 46, 0.70);
+  --glass-border:        rgba(78, 134, 176, 0.18);
+  --glass-strong-border: rgba(78, 134, 176, 0.28);
+  --glass-card-shadow:   rgba(0, 0, 0, 0.30);
+  --dot-color:           rgba(78, 134, 176, 0.35);
+  --vignette-color:      rgba(13, 21, 32, 0.65);
+
+  /* Semantic color overrides for dark mode */
+  --color-background:           #0d1520;
+  --color-on-background:        #dde6f0;
+  --color-on-surface:           #dde6f0;
+  --color-on-surface-variant:   #8fa8c2;
+  --color-surface-container-low: #141e2e;
+  --color-surface-container:    #1a2640;
+  --color-surface-variant:      #243348;
+  --color-outline:              #5a7a96;
+  --color-primary:              #4e86b0;
+  --color-primary-container:    #5a96c4;
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-strong {
+    background: var(--glass-strong-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-strong-border);
+  }
+
+  .glass-card {
+    background: var(--glass-card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px var(--glass-card-shadow);
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    transform-style: preserve-3d;
+  }
+
+  .card-hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+
+  .card-hover-glow:hover {
+    box-shadow: 0 0 40px rgba(0, 64, 224, 0.15), 0 20px 50px rgba(0, 0, 0, 0.08);
   }
 }
 
+.dark .card-hover-glow:hover {
+  box-shadow: 0 0 40px rgba(78, 134, 176, 0.30), 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Tilt shimmer — injected by GlobalTilt, follows mouse ── */
+.tilt-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.18) 0%,
+    transparent 68%
+  );
+}
+
+.dark .tilt-shimmer {
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(78, 134, 176, 0.22) 0%,
+    transparent 68%
+  );
+}
+
+/* ── Glass spotlight (legacy TiltCard) — kept for compatibility ── */
+.glass-spotlight {
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.16) 0%,
+    transparent 58%
+  );
+}
+
+.dark .glass-spotlight {
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(78, 134, 176, 0.20) 0%,
+    transparent 58%
+  );
+}
+
+/* Hero name shimmer — only active in dark mode */
+.dark .hero-name {
+  background: linear-gradient(
+    90deg,
+    #dde6f0 0%,
+    #7ab0d4 25%,
+    #c8dff0 50%,
+    #7ab0d4 75%,
+    #dde6f0 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Animation keyframes ─────────────────────────────────── */
+@keyframes ping-slow {
+  0%       { transform: scale(1);   opacity: 0.70; }
+  80%, 100% { transform: scale(2.6); opacity: 0;    }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
