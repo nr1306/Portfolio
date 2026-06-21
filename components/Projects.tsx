@@ -1,6 +1,8 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import { GitFork, ExternalLink, BookOpen, Star, ArrowUpRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import FadeInSection from "./FadeInSection";
 import ShimmerOverlay from "./ShimmerOverlay";
@@ -85,7 +87,7 @@ function FeaturedCard({ project }: { project: (typeof featuredProjects)[0] }) {
           {project.demo ? (
             <a href={project.demo} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-[13px] font-semibold text-[#a23f00] hover:text-[#fc7127] transition-colors">
-              <ExternalLink size={14} /> Watch Demo
+              <ExternalLink size={14} /> {project.demoLabel ?? "Watch Demo"}
             </a>
           ) : (
             <span className="text-[13px] font-semibold text-[#747688] dark:text-[#5a7a96] cursor-default">
@@ -191,6 +193,28 @@ function ResearchCard({ work }: { work: (typeof research)[0] }) {
 
 // ── Main section ─────────────────────────────────────────
 export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = useMemo(() => {
+    const seen = new Set<string>();
+    const cats: string[] = ["All"];
+    for (const p of featuredProjects) {
+      if (p.category && !seen.has(p.category)) {
+        seen.add(p.category);
+        cats.push(p.category);
+      }
+    }
+    return cats;
+  }, []);
+
+  const filtered = useMemo(
+    () =>
+      activeCategory === "All"
+        ? featuredProjects
+        : featuredProjects.filter((p) => p.category === activeCategory),
+    [activeCategory]
+  );
+
   return (
     <section id="projects" className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
@@ -208,19 +232,54 @@ export default function Projects() {
           </p>
         </FadeInSection>
 
-        {/* ── Featured ── */}
+        {/* ── Featured header + category filter ── */}
         <FadeInSection delay={0.05}>
-          <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#0040e0] dark:text-[#4e86b0] mb-5 flex items-center gap-2">
-            <Star size={11} className="fill-current" /> Featured Projects
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#0040e0] dark:text-[#4e86b0] flex items-center gap-2 shrink-0">
+              <Star size={11} className="fill-current" /> Featured Projects
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.08em] transition-all duration-200 ${
+                    activeCategory === cat
+                      ? "bg-[#0040e0] dark:bg-[#4e86b0] text-white shadow-md shadow-[#0040e0]/25 dark:shadow-[#4e86b0]/25"
+                      : "bg-[#eceef0] dark:bg-[#1a2640] text-[#434656] dark:text-[#8fa8c2] hover:bg-[#dde0e3] dark:hover:bg-[#243348]"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
         </FadeInSection>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12" style={{ perspective: "1200px" }}>
-          {featuredProjects.map((project, i) => (
-            <FadeInSection key={project.id} delay={i * 0.07}>
-              <FeaturedCard project={project} />
-            </FadeInSection>
-          ))}
+        {/* ── Filtered project grid ── */}
+        <div
+          className="grid md:grid-cols-2 gap-6 mb-12"
+          style={{ perspective: "1200px" }}
+        >
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project, i) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 24, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95, y: -8 }}
+                transition={{
+                  duration: 0.28,
+                  delay: i * 0.06,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                className="h-full"
+              >
+                <FeaturedCard project={project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
 
         {/* ── GitHub CTA ── */}

@@ -6,9 +6,11 @@ export type Project = {
   tags: string[];
   github?: string;
   demo?: string;
+  demoLabel?: string;
   image?: string;
   featured?: boolean;
   comingSoon?: boolean;
+  category?: string;
 };
 
 export type ResearchWork = {
@@ -58,6 +60,7 @@ export const featuredProjects: Project[] = [
     id: "aria",
     title: "ARIA",
     label: "Clinical AI System",
+    category: "Healthcare",
     description: "AI-powered pre-visit briefing system for a hypertension patient panel. ARIA generates risk-stratified clinical summaries before appointments using rules-based checks, risk scoring, FHIR R4 ingestion, and guarded LLM summaries.\n\nThe system is designed as clinician decision support, not autonomous diagnosis, with deterministic safety gates controlling when model output can be surfaced.",
     tags: ["Python", "FastAPI", "FHIR R4", "LLM Guardrails", "Healthcare AI"],
     github: "https://github.com/nr1306/Aria",
@@ -67,9 +70,22 @@ export const featuredProjects: Project[] = [
     comingSoon: true,
   },
   {
+    id: "carebridge",
+    title: "CareBridge",
+    label: "Community Care AI",
+    category: "Healthcare",
+    description: "Community care platform connecting elderly, homebound, and vulnerable individuals with vetted volunteers from local faith organizations. A safety-first 6-step AI intake protocol halts immediately for emergencies; multi-signal matching scores candidates across distance, schedule, skills, rating, language, and history — returning a ranked top 5.\n\nSMS dispatch tracks volunteer check-in/check-out and auto-escalates on silence. A daily 7am risk scan flags at-risk receivers from weather conditions and missed visits. Powered by Claude AI, Google A2A, and 5 MCP servers — coordinator support only, no medical decisions.",
+    tags: ["Next.js", "TypeScript", "Anthropic Claude", "Google A2A", "MCP", "PostgreSQL", "Twilio"],
+    github: "https://github.com/Sahil-Khalsa/outreach-revival",
+    demo: "https://outreach-production-04e5.up.railway.app",
+    image: "/carebridge.png",
+    featured: true,
+  },
+  {
     id: "venturescope",
     title: "VentureScope",
     label: "Multi-Agent Platform",
+    category: "Multi-Agent AI",
     description: "Multi-agent due diligence platform that runs market, financial, competitor, and risk agents in parallel. Built with FastAPI, Celery, Redis, PostgreSQL, and pgvector, then synthesized into structured investment reports in under 2 minutes.\n\nIncludes an evaluation harness tested on a 50-company golden dataset, reaching 100% competitor recall.",
     tags: ["FastAPI", "Next.js", "Python", "PostgreSQL", "Redis", "Celery"],
     github: "https://github.com/nr1306/VentureScope",
@@ -79,9 +95,22 @@ export const featuredProjects: Project[] = [
     comingSoon: true,
   },
   {
+    id: "golazo",
+    title: "Golazo",
+    label: "World Cup AI Agent",
+    category: "Multi-Agent AI",
+    description: "AI-powered companion for the 2026 FIFA World Cup. Chat with an AI agent to explore match lineups, plan your trip, check stadium crowd vibes, manage a fantasy roster, and receive live score alerts — all for USA/Canada/Mexico 2026.\n\nBuilt on Google ADK (Agent Development Kit) with Gemini 2.0 Flash, backed by FastAPI and MongoDB Atlas vector search for personalized, context-aware responses.",
+    tags: ["Next.js", "FastAPI", "Google ADK", "Gemini 2.0", "MongoDB Atlas", "TypeScript"],
+    github: "https://github.com/nr1306/golazo",
+    demo: "https://golazo-wc2026-de61e.web.app",
+    image: "/golazo.png",
+    featured: true,
+  },
+  {
     id: "prepwise",
     title: "PrepWise",
     label: "Voice AI Product",
+    category: "Voice AI",
     description: "Real-time AI mock interview platform with voice-driven sessions via Vapi AI. Features Firebase authentication, Google Gemini-powered conversational flows, instant feedback with session transcripts, and a full session dashboard — built on Next.js with a sub-300ms response pipeline.",
     tags: ["Next.js", "TypeScript", "Firebase", "Vapi AI", "Gemini"],
     github: "https://github.com/nr1306",
@@ -92,13 +121,15 @@ export const featuredProjects: Project[] = [
   {
     id: "ticker",
     title: "Ticker",
-    label: "Desktop AI Widget",
+    label: "v0.9.0 Released",
+    category: "Productivity",
     description: "Ambient Electron desktop widget for live stock tracking across portfolio and watchlist views. Includes GPT-4o-powered recommendations, smart price alerts, native notifications, and an AI news pulse backed by SQLite caching.",
     tags: ["TypeScript", "Electron", "Node.js", "SQLite", "GPT-4o"],
     github: "https://github.com/nr1306/Ticker",
+    demo: "https://github.com/nr1306/Ticker/releases/tag/v0.9.0",
+    demoLabel: "Download",
     image: "/Ticker.png",
     featured: true,
-    comingSoon: true,
   },
 ];
 
