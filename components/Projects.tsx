@@ -11,25 +11,20 @@ import { featuredProjects, research } from "@/lib/data";
 // ── Featured card ────────────────────────────────────────
 function FeaturedCard({ project }: { project: (typeof featuredProjects)[0] }) {
   const primaryUrl = project.demo || project.github;
+
+  const openPrimary = () => {
+    if (primaryUrl) window.open(primaryUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div
-      className="glass-card relative overflow-hidden rounded-[24px] p-8 flex flex-col gap-5 h-full
+      onClick={openPrimary}
+      className="glass-card relative overflow-hidden rounded-[24px] p-8 flex flex-col gap-5 h-full cursor-pointer
         ring-1 ring-[#0040e0]/15 dark:ring-[#4e86b0]/20
         shadow-[0_0_40px_rgba(0,64,224,0.07)] dark:shadow-[0_0_40px_rgba(78,134,176,0.10)]"
     >
-      {/* Stretched link — z-0, behind all content */}
-      {primaryUrl && (
-        <a
-          href={primaryUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 z-0 rounded-[24px]"
-          aria-label={`Open ${project.title}`}
-        />
-      )}
       <ShimmerOverlay />
 
-      {/* All card content sits at z-10 so inner links remain clickable */}
       <div className="relative z-10 flex flex-col gap-5 h-full">
         {/* Badges row */}
         <div className="flex items-center justify-between">
@@ -79,14 +74,24 @@ function FeaturedCard({ project }: { project: (typeof featuredProjects)[0] }) {
 
         <div className="flex items-center gap-4 pt-1 border-t border-[#e0e3e5] dark:border-[#243348]">
           {project.github && (
-            <a href={project.github} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[13px] font-semibold text-[#0040e0] dark:text-[#4e86b0] hover:text-[#2e5bff] dark:hover:text-[#5a96c4] transition-colors">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 text-[13px] font-semibold text-[#0040e0] dark:text-[#4e86b0] hover:text-[#2e5bff] dark:hover:text-[#5a96c4] transition-colors"
+            >
               <GitFork size={14} /> GitHub
             </a>
           )}
           {project.demo ? (
-            <a href={project.demo} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[13px] font-semibold text-[#a23f00] hover:text-[#fc7127] transition-colors">
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 text-[13px] font-semibold text-[#a23f00] hover:text-[#fc7127] transition-colors"
+            >
               <ExternalLink size={14} /> {project.demoLabel ?? "Watch Demo"}
             </a>
           ) : (
